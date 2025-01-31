@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
+import org.example.commands.Chat;
 import org.example.commands.Greeting;
 
 import java.util.EnumSet;
@@ -26,6 +27,7 @@ public class Main {
         JDA jda = JDABuilder.createLight(token, EnumSet.of(GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT))
                 .addEventListeners(new LogListener())
                 .addEventListeners(new Greeting())
+                .addEventListeners(new Chat())
                 .build();
 
 

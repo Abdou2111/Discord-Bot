@@ -19,6 +19,7 @@ public class Greeting extends ListenerAdapter {
     @Override
     public void onReady(@NotNull ReadyEvent event) {
         Guild guild = event.getJDA().getGuildById("1327776851745181806");
+        assert guild != null;
         guild.upsertCommand("greet", "Greets the user").queue();
     }
 }
